@@ -119,7 +119,8 @@ class DocumentManager private constructor(private val context: Context) {
                     builder.putEntryByteString(field.namespace!!, field.name, bytes)
                 }
 
-                is CredentialAttributeType.IntegerOptions -> {
+                is CredentialAttributeType.IntegerOptions,
+                is CredentialAttributeType.NUMBER -> {
                     if (field.hasValue()) {
                         builder.putEntryNumber(
                             field.namespace!!,
